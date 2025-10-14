@@ -22,32 +22,43 @@ This project demonstrates the setup and configuration of a Windows Server 2019 A
 <h2>Program walk-through:</h2>
 
 <p align="center">
-Launch the utility: <br/>
-<img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Active Directory setup begins by installing the Active Directory Domain Services (AD DS) role on Windows Server 2019.
+After installation, the server is promoted to a domain controller and the domain mohamedyagoub.com is created.: <br/>
+<img src="https://imgur.com/ZZsOGdH.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+ <img src="https://imgur.com/qdvOWqI.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+ <img src="https://imgur.com/8AmNJek.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-Select the disk:  <br/>
+Configured IP address, DNS, and time zone for proper domain connectivity.
+Server renamed to SERVER01 and connected to an internal VirtualBox network.:  <br/>
 <img src="https://i.imgur.com/tcTyMUE.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-Enter the number of passes: <br/>
+Created OUs for: IT, Sales, HR, Accounting, Research, CCP, Temple, and Drexel. Each OU was organized to simulate real enterprise departments: <br/>
 <img src="https://i.imgur.com/nCIbXbg.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-Confirm your selection:  <br/>
+Add Users (Manual and Scripted):
+Added users manually to HR, IT, and Sales OUs & used PowerShell and CSVDE to automate user creation for Temple and CCP OUs:  <br/>
 <img src="https://i.imgur.com/cdFHBiU.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-Wait for process to complete (may take some time):  <br/>
+Configured RAID 5 storage in Server Manager to simulate data redundancy and improve read performance:  <br/>
 <img src="https://i.imgur.com/JL945Ga.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-Sanitization complete:  <br/>
+Map Network Drives:
+Used File Explorer to manually map S:, H:, and P: drives for department shares. Automated mappings using PowerShell and Batch scripts for drives F:, Z:, and Y:  <br/>
 <img src="https://i.imgur.com/K71yaM2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-Observe the wiped disk:  <br/>
+Logged into a domain-joined Windows 11 client to confirm users could access mapped drives and apply GPO restrictions:  <br/>
 <img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+Collected screenshots and notes verifying that all domain services, permissions, and mappings functioned as expected.  <br/>
+<img src="https://i.imgur.com/K71yaM2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
 </p>
 
 <!--
